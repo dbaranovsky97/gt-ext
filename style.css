@@ -1,0 +1,8 @@
+.tl-output bdi {
+    color: transparent;
+    transition: color 0.3s;
+}
+
+.tl-output:hover bdi {
+    color: #5f6368;
+}
