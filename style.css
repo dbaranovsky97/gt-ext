@@ -1,8 +1,8 @@
-.tl-output bdi {
+li span[lang="ru"] {
     color: transparent;
     transition: color 0.3s;
 }
 
-.tl-output:hover bdi {
+li span[lang="ru"]:hover {
     color: #5f6368;
 }
