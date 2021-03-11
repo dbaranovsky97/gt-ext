@@ -6,7 +6,7 @@
     "permissions": ["activeTab", "storage"],
     "content_scripts": [{
       "matches": ["https://translate.google.com/*"],
-      "js": ["contentScript.js"]
+      "js": ["langHidder.js"]
     }],
     "action": {
       "default_popup": "popup.html"

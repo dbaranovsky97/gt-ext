@@ -1,15 +1,20 @@
-(function () {
+listenExtension();
+
+function listenExtension() {
     const langs = parseLangsFromPage();
+    let currentHiddenLang = '';
 
     chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-            if (request.func == 'hideLang') {
-                hideLang(...request.args);
-            } else if (request.func == 'loadLangs') {
-                sendResponse({ langs });
-            }
+        if (request.func == 'hideLang') {
+            hideLang(request.args[0]);
+            currentHiddenLang = request.args[0];
+        } else if (request.func == 'getLangs') {
+            sendResponse({ langs });
+        } else if (request.func == 'getCurrentHiddenLang') {
+            sendResponse({ lang: currentHiddenLang });
         }
-    );
-})();
+    });
+}
 
 function hideLang(lang) {
     styleElem = document.querySelector('#dbaranovskiy-gt-ext-style');
