@@ -1,10 +1,14 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "gt-ext",
     "description": "My extensions for Google Translate",
-    "version": "1.0",
-    "permissions": ["activeTab", "declarativeContent"],
-    "browser_action": {
+    "version": "1.1",
+    "permissions": ["activeTab", "storage"],
+    "content_scripts": [{
+      "matches": ["https://translate.google.com/*"],
+      "js": ["contentScript.js"]
+    }],
+    "action": {
       "default_popup": "popup.html"
     }
 }

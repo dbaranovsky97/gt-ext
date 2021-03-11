@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <style>
+        * {
+            font-size: 16px;
+        }
+        body {
+            width: 140px;
+        }
+    </style>
 </head>
 <body>
-    <input type="text" value="en" id="hidden-langs">
-    <button id="hide-btn">hide</button>
+    <label for="hidden-lang-select">Hidden lang: </label>
+    <select name="hidden-lang-select" id="hidden-lang-select"></select>
     <script src="popup.js"></script>
 </body>
 </html>
