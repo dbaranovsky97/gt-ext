@@ -1,8 +1,0 @@
-li span[lang="ru"] {
-    color: transparent;
-    transition: color 0.3s;
-}
-
-li span[lang="ru"]:hover {
-    color: #5f6368;
-}
