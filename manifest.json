@@ -1,12 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "gt-ext",
-    "description": "My extensions for Google Translate",
+    "name": "gt-check-yourself",
+    "description": "The extension hides translations of words in the selected language, and you can check if you remember the translation.",
     "version": "1.1",
-    "permissions": ["activeTab", "storage"],
+    "permissions": ["activeTab"],
     "content_scripts": [{
       "matches": ["https://translate.google.com/*"],
-      "js": ["langHidder.js"]
+      "js": ["page.js"]
     }],
     "action": {
       "default_popup": "popup.html"
