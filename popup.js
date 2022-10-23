@@ -1,6 +1,4 @@
 class Popup {
-	_select;
-
 	constructor() {
 		this._initSelect();
 	}
@@ -26,10 +24,9 @@ class Popup {
 		this._makeRequestToPage("hideLang", [lang]);
 	}
 
-	_makeRequestToPage(method, args) {
-		return chrome.tabs
-			.query({ active: true, currentWindow: true })
-			.then((tabs) => chrome.tabs.sendMessage(tabs[0].id, { method, args }));
+	async _makeRequestToPage(method, args) {
+		const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+		chrome.tabs.sendMessage(tabs[0].id, { method, args });
 	}
 }
 
