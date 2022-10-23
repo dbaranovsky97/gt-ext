@@ -26,7 +26,7 @@ class Popup {
 
 	async _makeRequestToPage(method, args) {
 		const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-		chrome.tabs.sendMessage(tabs[0].id, { method, args });
+		return chrome.tabs.sendMessage(tabs[0].id, { method, args });
 	}
 }
 
